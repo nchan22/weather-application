@@ -41,3 +41,18 @@ function generateSearchHistory() {
     });
   }
 }
+
+var city = function () {
+  var cityName = searchCityEl.value;
+
+  currentWeatherEl.innerHTML = "";
+  getCurrentWeather(cityName);
+  saveRecentCities(cityName);
+};
+
+// clear local storage
+
+clearHistoryEl.addEventListener("click", function () {
+  localStorage.clear();
+  window.location.reload();
+});
