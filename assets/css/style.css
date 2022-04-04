@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#bgVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 60%;
+}
+
+/* navbar styling */
+nav {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+.navbar .title {
+  color: #fff;
+}
+/* input bar  */
+.searchCity {
+  width: 100%;
+}
+
+/* box for current weather */
+.currentWeather {
+  min-height: 350px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.card-group {
+  min-height: 200px;
+  display: flex;
+}
+
+.forecastHeading {
+  margin-top: 10px;
+}
+
+.day-1,
+.day-2,
+.day-3,
+.day-4,
+.day-5 {
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  font-weight: bold;
+
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+
+.btn-primary {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
