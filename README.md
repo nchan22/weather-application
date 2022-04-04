@@ -21,9 +21,9 @@ https://nchan22.github.io/weather-application/
 
 
 ## Screenshots
-![Alt text](screenshots/screenshot1.jpg)
-![Alt text](screenshots/screenshot2.jpg)
-![Alt text](screenshots/screenshot3.jpg)
+![Alt text](assets/screenshots/screenshot1.jpg)
+![Alt text](assets/screenshots/screenshot2.jpg)
+![Alt text](assets/screenshots/screenshot3.jpg)
 
 ## Contributors:
 Written by Nathaniel Chan
