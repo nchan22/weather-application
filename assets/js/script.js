@@ -56,3 +56,47 @@ clearHistoryEl.addEventListener("click", function () {
   localStorage.clear();
   window.location.reload();
 });
+
+// getting and displaying current weather
+
+var getCurrentWeather = function (city) {
+  fetch(
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+      city +
+      "&appid=" +
+      apiKey +
+      "&units=metric"
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var currentDate = moment().format("(MM/DD/YYYY)");
+      var weatherNow = data.main.temp;
+      var windSpeedNow = data.wind.speed;
+      var humidityNow = data.main.humidity;
+      var cityLon = data.coord.lon;
+      var cityLat = data.coord.lat;
+
+      var cityHeading = document.createElement("h2");
+      cityHeading.className = "city_heading";
+      cityHeading.innerHTML = city + ", " + currentDate;
+      currentWeatherEl.append(cityHeading);
+
+      var currentWeatherTemp = document.createElement("p");
+      currentWeatherTemp.innerHTML = "Temp: " + weatherNow + " ℃";
+      currentWeatherEl.append(currentWeatherTemp);
+
+      var currentWeatherWind = document.createElement("p");
+      currentWeatherWind.innerHTML = "Wind : " + windSpeedNow + " m/s";
+      currentWeatherEl.append(currentWeatherWind);
+
+      var currentWeatherHumidity = document.createElement("p");
+      currentWeatherHumidity.innerHTML = "Humidity :" + humidityNow + " %";
+      currentWeatherEl.append(currentWeatherHumidity);
+
+      getUv(cityLon, cityLat);
+      searchCityEl.value = "";
+      fiveDayWeather(cityLon, cityLat);
+    });
+};
