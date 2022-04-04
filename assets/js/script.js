@@ -130,3 +130,56 @@ var getUv = function (lon, lat) {
       }
     });
 };
+
+// five day weather forecast
+
+var fiveDayWeather = function (lon, lat) {
+  fetch(
+    "https://api.openweathermap.org/data/2.5/forecast?lon=" +
+      lon +
+      "&lat=" +
+      lat +
+      "&appid=" +
+      apiKey +
+      "&units=metric"
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var weatherArray = data.list;
+
+      var fiveDays = weatherArray.filter((day) =>
+        day.dt_txt.includes("18:00:00")
+      );
+
+      for (var i = 0; i < fiveDays.length; i++) {
+        var day = fiveDays[i];
+        var icon = day.weather[0].icon;
+
+        var iconUrl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+        var img = $("<img/>").attr({ src: iconUrl }).append(day[i]);
+
+        var dt = moment(new Date(day.dt * 1000)).format("MM/DD/YYYY");
+        var dayTemp = day.main.temp.toFixed(2);
+        var dayHumidity = day.main.humidity;
+        var dayWind = day.wind.speed;
+
+        cardArray[i].append(dt + "  ");
+        cardArray[i].appendChild(document.createElement("img")).src = iconUrl;
+        cardArray[i].append("Temp:" + dayTemp + "℃ ");
+        cardArray[i].append("Humidity:" + dayHumidity + "% ");
+        cardArray[i].append("WindSpeed:" + "     " + dayWind + " m/s");
+      }
+    });
+};
+
+// events for search button
+
+searchBtnEl.addEventListener("click", function () {
+  if (searchCityEl === null) {
+    window.alert("You must enter a city");
+  }
+  city();
+});
+generateSearchHistory();
