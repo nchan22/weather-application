@@ -9,7 +9,7 @@ var day4El = document.querySelector(".day-4");
 var day5El = document.querySelector(".day-5");
 
 var cardArray = [day1El, day2El, day3El, day4El, day5El];
-var apiKey = "607439a3ad59adef49501bad43c27015";
+var apiKey = "51bb20366c31d601a962663f8c63ae41";
 var historyEl = document.querySelector(".history");
 var clearHistoryEl = document.querySelector(".clear-history");
 
