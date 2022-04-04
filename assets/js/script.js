@@ -167,9 +167,9 @@ var fiveDayWeather = function (lon, lat) {
 
         cardArray[i].append(dt + "  ");
         cardArray[i].appendChild(document.createElement("img")).src = iconUrl;
-        cardArray[i].append("Temp:" + dayTemp + "℃ ");
-        cardArray[i].append("Humidity:" + dayHumidity + "% ");
-        cardArray[i].append("WindSpeed:" + "     " + dayWind + " m/s");
+        cardArray[i].append("Temp: " + dayTemp + "℃ ");
+        cardArray[i].append("Humidity: " + dayHumidity + "% ");
+        cardArray[i].append("Wind Speed: " + dayWind + " m/s");
       }
     });
 };
