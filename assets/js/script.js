@@ -100,3 +100,33 @@ var getCurrentWeather = function (city) {
       fiveDayWeather(cityLon, cityLat);
     });
 };
+
+// uv index function
+
+var getUv = function (lon, lat) {
+  fetch(
+    "https://api.openweathermap.org/data/2.5/onecall?lon=" +
+      lon +
+      "&lat=" +
+      lat +
+      "&exclude=hourly,daily&appid=" +
+      apiKey
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var weatherUv = data.current.uvi;
+      var uvEl = document.createElement("p");
+      uvEl.innerHTML = "UV Index: " + weatherUv;
+      currentWeatherEl.append(uvEl);
+
+      if (weatherUv >= 0 && weatherUv <= 2) {
+        uvEl.style.backgroundColor = "green";
+      } else if (weatherUv <= 3 && weatherUv <= 5) {
+        uvEl.style.backgroundColor = "yellow";
+      } else {
+        uvEl.style.backgroundColor = "red";
+      }
+    });
+};
