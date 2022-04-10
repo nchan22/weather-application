@@ -1,4 +1,4 @@
-# Weather APplication
+# Weather Application
 
 ### Purpose:
 
