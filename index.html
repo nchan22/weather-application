@@ -29,53 +29,53 @@
       Your browser does not support HTML5 video.
     </video>
 
-    <!-- navbar -->
-    <nav class="navbar sticky-top navbar-light bg-light">
+     <!-- navbar -->
+     <nav class="navbar sticky-top navbar-light bg-light">
       <h1 class="title mb-0 h1 ml-auto">Weather Dashboard</h1>
     </nav>
-
+    <!-- page content -->
     <div class="container">
-        <div class="row">
-  
-          <!-- search bar content -->
-          <div class="col-sm-4 cityDisplay">
-            <h4>Search for a city:</h4>
-  
-            <div class="input-group">
-              <input
-                type="text"
-                class="searchCity"
-                placeholder="Enter City Name"
-              />
-            </div>
-            <div class="searchBtn">
-              <button type="button" class="btn btn-primary btn-md btn-block">
-                Search
-              </button>
-            </div>
-            <hr class="divider" />
-           <button class="btn btn-primary clear-history" type="button" >Clear History</button>
-            <div class="history"></div>
+      <div class="row">
+
+        <!-- right side search bar content -->
+        <div class="col-sm-4 cityDisplay">
+          <h4>Search for a city:</h4>
+
+          <div class="input-group">
+            <input
+              type="text"
+              class="searchCity"
+              placeholder="Enter City Name"
+            />
           </div>
+          <div class="searchBtn">
+            <button type="button" class="btn btn-primary btn-md btn-block">
+              Search
+            </button>
+          </div>
+          <hr class="divider" />
+         <button class="btn btn-primary clear-history" type="button" >Clear History</button>
+          <div class="history"></div>
+        </div>
 
-<!-- weather displayed  -->
-<div class="displayWeather col-sm-12">
-    <div class="currentWeather card border border-dark"></div>
+        <!-- weather displayed  -->
+        <div class="displayWeather col-sm-12">
+          <div class="currentWeather card border border-dark"></div>
 
-    <div class="futureForecast">
-      <h5 class="forecastHeading">5-Day Forecast:</h5>
-      <div class="card-group">
-       <div class="day-1 card text-white bg-secondary"></div>
-       <div class="day-2 card text-white  bg-secondary "></div>
-       <div class="day-3 card text-white  bg-secondary "></div>
-       <div class="day-4 card text-white bg-secondary"></div>
-       <div class="day-5 card text-white bg-secondary"></div>
-     </div>
-  </div>
-</div>
-</div>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="assets/js/script.js"></script>
-</body>
+          <div class="futureForecast">
+            <h5 class="forecastHeading">5-Day Forecast:</h5>
+            <div class="card-group">
+             <div class="day-1 card text-white bg-secondary"></div>
+             <div class="day-2 card text-white  bg-secondary "></div>
+             <div class="day-3 card text-white  bg-secondary "></div>
+             <div class="day-4 card text-white bg-secondary"></div>
+             <div class="day-5 card text-white bg-secondary"></div>
+           </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
